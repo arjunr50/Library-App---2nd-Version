@@ -4,7 +4,7 @@
 This repository contains the files of Library app
 
 ## Features
-+ SIGN UO and LOGIN validation
++ SIGN UP and LOGIN validation
 + ADD BOOKS 
 + ADD AUTHORS
 + EDIT BOOKS
