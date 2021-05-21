@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/style1.css">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <%for(i=0;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].link%>">
+                                <%=nav[i].name%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <!-- partial:index.partial.html -->
+    <form id="loginForm" name="loginForm" class="aa" action="/addbook/add" method="POST" enctype="multipart/form-data">
+
+        <h1><strong>Add Book</strong> </h1>
+
+        <div class="form-group">
+            <input type="text" name="title" id="title" class="form-controll" placeholder="Enter Book Name" required />
+        </div>
+        <div class="form-group">
+            <input type="text" name="author" id="author" class="form-controll" placeholder="Enter Author Name"
+                required />
+        </div>
+        <div class="form-group">
+            <input type="text" name="genre" id="genre" class="form-controll" placeholder="Enter Genre" required />
+        </div>
+        <div class="form-group">
+            <input type="text" name="link" id="link" class="form-controll" placeholder="Enter Link for Reference"
+                required />
+        </div>
+        <div class="form-group">
+            <input type="text" name="blurb" id="blurb" class="form-controll" placeholder="Enter Blurb" required />
+        </div>
+
+        <div class="form-group file-area">
+            <label for="images">Upload Book Image</label>
+            <input type="file" name="image" id="image" required="required" accept="image/*" />
+            <div class="file-dummy">
+                <div class="success">Great, your file is selected. Keep on.</div>
+                <div class="default">Please select a file</div>
+            </div>
+        </div>
+        <!-- <div class="form-group file-area">
+            <label for="images">Upload Book in Pdf Format</label>
+            <input type="file" name="file" id="file" required="required"
+                accept="application/pdf, application/vnd.ms-excel" />
+            <div class="file-dummy">
+                <div class="success">Great, your file is selected. Keep on.</div>
+                <div class="default">Please select a file</div>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <button type="submit">Add Book</button>
+        </div>
+
+    </form>
+
+
+
+
+
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet'
+        type='text/css'>
+
+
+    <!-- partial -->
+
+</body>
+
+</html>

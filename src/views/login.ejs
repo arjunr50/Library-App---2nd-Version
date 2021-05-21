@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%=title%>
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">LIBRARY</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <%for(i=0;i<nav3.length;i++){%>
+                        <li>
+                            <a href="<%=nav3[i].link%>">
+                                <%=nav3[i].name%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-b-160 p-t-50">
+                <form name="myform" class="login100-form validate-form" method="POST" action="/signUp/check">
+                    <span class="login100-form-title p-b-43">
+                        <strong>LOGIN</strong>
+                    </span>
+
+                    <div class="wrap-input100 rs1 validate-input" data-validate="Email is required">
+                        <input class="input100" type="email" name="email" id="email" required="required">
+                        <span class="label-input100">Email</span>
+
+                    </div>
+                    <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="password" id="password" required="required"
+                            placeholder="Password">
+                        <span class="label-input100">Password</span>
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" input type="submit">
+                            Sign in
+                        </button>
+                    </div>
+
+                    <div class="text-center w-full p-t-23">
+                        <a href="/signup" class="txt1">
+                            You don't have an Account? Register Now!
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

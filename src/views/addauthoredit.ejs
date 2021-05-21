@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/style1.css">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <%for(i=0;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].link%>">
+                                <%=nav[i].name%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <!-- partial:index.partial.html -->
+    <form class="aa" action="/admin/updateAuthor/<%=author._id%>" method="post" enctype="multipart/form-data">
+
+        <h1><strong>Update Author</strong> </h1>
+
+        <div class="form-group">
+            <input type="text" name="author" id="author" class="form-controll" value="<%=author.author%>" required
+                placeholder="Enter Author Name" />
+        </div>
+        <div class="form-group">
+            <input type="text" name="title" id="title" class="form-controll" value="<%=author.title%>" required
+                placeholder="Enter Author's Famous Book Name" />
+        </div>
+        <div class="form-group">
+            <input type="text" name="genre" id="genre" class="form-controll" value="<%=author.genre%>" required
+                placeholder="Enter Genre" />
+        </div>
+        <div class="form-group">
+            <input type="text" name="link" id="link" class="form-controll" value="<%=author.link%>" required
+                placeholder="Enter Reference Link" />
+        </div>
+        <div class="form-group file-area">
+            <label for="desc">Brief Description of Author</label>
+
+            <textarea id="desc" name="desc" required=""><%=author.desc%></textarea>
+        </div>
+
+        <div class="form-group file-area">
+            <label for="images">Upload Author Image</label>
+            <input type="file" name="image" id="image" required="required" accept="image/*" />
+            <div class="file-dummy">
+                <div class="success">Great, your file is selected. Keep on.</div>
+                <div class="default">Please select a file</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Add Author</button>
+        </div>
+
+    </form>
+    <div class="form-group btn-btn-danger">
+        <button><a href="/authors/<%=author._id%>">Cancel</a></button>
+    </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet'
+        type='text/css'>
+
+
+    <!-- partial -->
+
+</body>
+
+</html>
