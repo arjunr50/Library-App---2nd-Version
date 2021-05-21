@@ -3,6 +3,18 @@
 ## Library App using Node.js, Express, Mongodb ,Multer
 This repository contains the files of Library app
 
+## Features
++ SIGN UO and LOGIN validation
++ ADD BOOKS 
++ ADD AUTHORS
++ EDIT BOOKS
++ EDIT AUTHORS
++ DELETE AUTHOR
++ DELETE BOOK
++ UPLOAD IMAGE
++ LOGOUT
+
+
 ## FILE Contents
 + Node Modules
 + Dependencies
